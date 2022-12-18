@@ -1,0 +1,9 @@
+[book]
+authors = ["Michail Krasnov <michail383krasnov@mail.ru>"]
+language = "ru"
+multilingual = false
+src = "src"
+title = "Calmira GNU/Linux-libre Handbook"
+
+[output.html]
+preferred-dark-theme = "ayu"

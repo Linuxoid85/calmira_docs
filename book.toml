@@ -1,0 +1,6 @@
+[book]
+authors = ["Michail Krasnov <michail383krasnov@mail.ru>"]
+language = "ru"
+multilingual = false
+src = "src"
+title = "Документация Calmira GNU/Linux-libre"
