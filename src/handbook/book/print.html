@@ -1,0 +1,718 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Calmira GNU/Linux-libre Handbook</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">Предисловие</a></li><li class="chapter-item expanded affix "><li class="part-title">Часть 1</li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Часть 1</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1_intro.html"><strong aria-hidden="true">1.1.</strong> Введение</a></li><li class="chapter-item expanded "><a href="chapter_1_installation.html"><strong aria-hidden="true">1.2.</strong> Установка дистрибутива версии &gt;= 2.Х</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Часть 2</li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Часть 2</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_2_auth.html"><strong aria-hidden="true">2.1.</strong> Авторизация в системе</a></li><li class="chapter-item expanded "><a href="chapter_2_setting_up.html"><strong aria-hidden="true">2.2.</strong> Первичная настройка дистрибутива</a></li><li class="chapter-item expanded "><a href="chapter_2_grub.html"><strong aria-hidden="true">2.3.</strong> Настройка GRUB</a></li><li class="chapter-item expanded "><a href="chapter_2_editors.html"><strong aria-hidden="true">2.4.</strong> Редактирование файлов</a></li><li class="chapter-item expanded "><a href="chapter_2_software.html"><strong aria-hidden="true">2.5.</strong> Управление программным обеспечением</a></li><li class="chapter-item expanded "><a href="chapter_2_permissions.html"><strong aria-hidden="true">2.6.</strong> Управление правами доступа</a></li><li class="chapter-item expanded "><a href="chapter_2_init.html"><strong aria-hidden="true">2.7.</strong> Работа с системой инициализации</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Часть 3</li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> Часть 3</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3_kernel.html"><strong aria-hidden="true">3.1.</strong> Ядро системы</a></li><li class="chapter-item expanded "><a href="chapter_3_env_intro.html"><strong aria-hidden="true">3.2.</strong> Оболочка системы</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3_env_soft.html"><strong aria-hidden="true">3.2.1.</strong> Основные программы</a></li><li class="chapter-item expanded "><a href="chapter_3_env_bash.html"><strong aria-hidden="true">3.2.2.</strong> BASH</a></li><li class="chapter-item expanded "><a href="chapter_3_env_dirs.html"><strong aria-hidden="true">3.2.3.</strong> Перемещение по директориям</a></li><li class="chapter-item expanded "><a href="chapter_3_env_files.html"><strong aria-hidden="true">3.2.4.</strong> Работа с файлами</a></li><li class="chapter-item expanded "><a href="chapter_3_env_vars.html"><strong aria-hidden="true">3.2.5.</strong> Переменные окружения</a></li><li class="chapter-item expanded "><a href="chapter_3_env_path.html"><strong aria-hidden="true">3.2.6.</strong> Пути до исполняемых файлов</a></li><li class="chapter-item expanded "><a href="chapter_3_env_man.html"><strong aria-hidden="true">3.2.7.</strong> Получение интерактивной справки</a></li><li class="chapter-item expanded "><a href="chapter_3_env_io.html"><strong aria-hidden="true">3.2.8.</strong> Ввод и вывод</a></li><li class="chapter-item expanded "><a href="chapter_3_env_errors.html"><strong aria-hidden="true">3.2.9.</strong> Основные ошибки</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_3_ps_intro.html"><strong aria-hidden="true">3.3.</strong> Управление процессами</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3_ps_process.html"><strong aria-hidden="true">3.3.1.</strong> Компоненты процесса</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3_ps_pid.html"><strong aria-hidden="true">3.3.1.1.</strong> PID и PPID</a></li><li class="chapter-item expanded "><a href="chapter_3_ps_uid.html"><strong aria-hidden="true">3.3.1.2.</strong> UID и EUID</a></li><li class="chapter-item expanded "><a href="chapter_3_ps_gid.html"><strong aria-hidden="true">3.3.1.3.</strong> GID и EGID</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_3_ps_lifetime.html"><strong aria-hidden="true">3.3.2.</strong> Жизненный цикл процесса</a></li><li class="chapter-item expanded "><a href="chapter_3_ps_signals.html"><strong aria-hidden="true">3.3.3.</strong> Сигналы</a></li><li class="chapter-item expanded "><a href="chapter_3_ps_kill.html"><strong aria-hidden="true">3.3.4.</strong> Использование kill</a></li><li class="chapter-item expanded "><a href="chapter_3_ps_ps.html"><strong aria-hidden="true">3.3.5.</strong> Использование ps</a></li><li class="chapter-item expanded "><a href="chapter_3_ps_top.html"><strong aria-hidden="true">3.3.6.</strong> Использование top</a></li><li class="chapter-item expanded "><a href="chapter_3_ps_nice.html"><strong aria-hidden="true">3.3.7.</strong> Изменение приоритета выполнения</a></li><li class="chapter-item expanded "><a href="chapter_3_ps_proc.html"><strong aria-hidden="true">3.3.8.</strong> Файловая система /proc</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_3_users_intro.html"><strong aria-hidden="true">3.4.</strong> Управление пользователями</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3_users_root.html"><strong aria-hidden="true">3.4.1.</strong> Учётная запись root</a></li><li class="chapter-item expanded "><a href="chapter_3_users_su.html"><strong aria-hidden="true">3.4.2.</strong> Замена идентификатора пользователя: su</a></li><li class="chapter-item expanded "><a href="chapter_3_users_sudo.html"><strong aria-hidden="true">3.4.3.</strong> Использование sudo</a></li><li class="chapter-item expanded "><a href="chapter_3_users_sysusers.html"><strong aria-hidden="true">3.4.4.</strong> Прочие системные учётные записи</a></li><li class="chapter-item expanded "><a href="chapter_3_users_groups.html"><strong aria-hidden="true">3.4.5.</strong> Группы пользователей</a></li><li class="chapter-item expanded "><a href="chapter_3_users_create.html"><strong aria-hidden="true">3.4.6.</strong> Создание пользователей</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_3_perm_intro.html"><strong aria-hidden="true">3.5.</strong> Управление правами доступа</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3_perm_chmod.html"><strong aria-hidden="true">3.5.1.</strong> Стандартное управление доступом</a></li><li class="chapter-item expanded "><a href="chapter_3_perm_additional.html"><strong aria-hidden="true">3.5.2.</strong> Расширенное управление доступом</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3_perm_setuid.html"><strong aria-hidden="true">3.5.2.1.</strong> Установка флагов setuid и setgid</a></li><li class="chapter-item expanded "><a href="chapter_3_perm_acl.html"><strong aria-hidden="true">3.5.2.2.</strong> ACL</a></li></ol></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Calmira GNU/Linux-libre Handbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Предисловие"><a class="header" href="#Предисловие">Предисловие</a></h1>
+<h2 id="О-руководстве"><a class="header" href="#О-руководстве">О руководстве</a></h2>
+<p>Люди, которые используют Calmira GNU/Linux-libre с недавнего времени, найдут,
+что в этом руководстве описаны далеко не все сведения о дистрибутиве, так как на
+данный момент руководство всё ещё находится в разработке. Однако, если вы хотите
+ускорить работу над Calmira GNU/Linux-libre Handbook, можете либо написать
+какую-либо из глав, либо исправить уже существующие страницы. Для этого посетите
+наш <a href="https://gitlab.com/calmiralinux/docs">GitLab</a> для получения соответствующих
+сведений. Очень полезным будет раздел &quot;Issues&quot; оттуда - там перечислено всё, что
+нуждается в исправлении, дополнении и написании.</p>
+<p>Данное руководство кратко освещает идеи и традиции, на которых базируется
+GNU/Linux(-libre). Работа с этим руководством требует нечто большего, чем просто
+исследовать - важна возможность принимать к сведению и запоминать новые вещи.</p>
+<p>Другая часть руководства является инструкцией по установке этого дистрибутива
+GNU/Linux-libre на свой компьютер или виртуальную машину.</p>
+<h2 id="Целевая-аудитория"><a class="header" href="#Целевая-аудитория">Целевая аудитория</a></h2>
+<p>Так как дистрибутив Calmira GNU/Linux-libre (далее - <em>дистрибутив</em>) предназначен
+для опытных пользователей, либо для тех, кто хочет изучить строение GNU/Linux,
+то и руководство ориентируется именно на таких людей. Здесь не будет очень
+обширных сведений о банальных вещах, вроде записи образа на флешку, загрузки ПК
+с неё и пр. Предполагается, что читатель уже знаком с базовыми сведениями об
+управлении ПК, поэтому в данном руководстве они отсутствуют.</p>
+<p>Если вам не понятны какие-либо сведения, то на это есть две причины:</p>
+<ol>
+<li>Вам не хватает базовых знаний. Тогда добро пожаловать в
+<a href="https://google.com">Google</a>.</li>
+<li>В руководстве эти сведения описаны некорректно. Тогда оставьте у нас на
+GitLab [ссылка выше] соответствующее issue с полным описанием проблемы.</li>
+</ol>
+<h2 id="Условные-обозначения-принятые-в-руководстве"><a class="header" href="#Условные-обозначения-принятые-в-руководстве">Условные обозначения, принятые в руководстве</a></h2>
+<p><em>Курсивный шрифт</em></p>
+<p>Используется для выделенного текста и первого применения технических терминов.</p>
+<p><strong>Полужирный шрифт</strong></p>
+<p>Используется для обозначения приложений, команд и параметров.</p>
+<p><code>Моноширинный шрифт</code></p>
+<p>Используется для обозначения команд, имён пользователей, групп, названий
+устройств, файлов, переменных и фрагментов кода.</p>
+<blockquote>
+<p>Цитата</p>
+</blockquote>
+<p>Просто какая-то цитата :)</p>
+<h3 id="Пользовательский-ввод"><a class="header" href="#Пользовательский-ввод">Пользовательский ввод</a></h3>
+<p>Клавиши указываются <strong>полужирным текстом</strong> для выделения среди остального
+текста. Комбинации клавиш разделяются символом <code>+</code>:</p>
+<p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Delete</kbd></p>
+<p>Команды, которые начинаются со знака <code>#</code> означают, что вы должны запустить эту
+команду от имени пользователя <code>root</code> в дистрибутиве. Например:</p>
+<pre><code># cport --install editors/gvim
+</code></pre>
+<p>Команды, которые начинаются со знака <code>%</code> означают, что вы должны запустить эту
+команду от имени обычного пользователя:</p>
+<pre><code>% cport list -a
+</code></pre>
+<blockquote>
+<p>Символы <code># </code> и <code>% </code> вводить не нужно!</p>
+</blockquote>
+<p>Иногда в командах встречаются комментарии. Они также начинаются с символа <code>#</code>.
+Для того, чтобы определить комментарий от команды, используйте следующие
+правила:</p>
+<ol>
+<li>В руководстве комментарии выделяются серым цветом. А команды - нет.</li>
+<li>Комментарии являются простыми подсказками пользователю и не несут никакой
+ценности дистрибутиву. Комментарии просто поясняют какие-то вещи, не более.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Часть-1-Введение"><a class="header" href="#Часть-1-Введение">Часть 1. Введение</a></h1>
+<p>Эта часть руководства предназначена для пользователей и администраторов, которые
+являются новичками в данном дистрибутиве. Сведения отсюда:</p>
+<ul>
+<li>Введут вас в Calmira GNU/Linux-libre.</li>
+<li>Проведут вас по процессу установки дистрибутива.</li>
+<li>Обучат вас некоторым основам Linux.</li>
+<li>Покажут вам как устанавливать стороннее программное обеспечение дистрибутива.</li>
+</ul>
+<h2 id="Предназначение-руководства"><a class="header" href="#Предназначение-руководства">Предназначение руководства</a></h2>
+<p>Мы написали это руководство для нескольких категорий пользователей. Во-первых,
+это те, кто изучает строение GNU/Linux. Таким людям нужен простой и быстрый
+дистрибутив этой ОС, который распространяется в исходных кодах, а также
+дистрибутив достаточно легко модифицируемый.</p>
+<p>Во-вторых, данное руководство предназначено для разработчиков свободного
+программного обеспечения для GNU/Linux. Так как наша система достаточно
+минималистична, достаточно неплохим шагом будет тестирование ПО на ней.</p>
+<p>Это общее руководство. Здесь рассматриваются базовые возможности и объясняются,
+как они работают воедино. В случае выбора между несколькими технологиями
+предлагается сравнение каждой из них.</p>
+<p>Здесь собраны те сведения, которые необходимо знать каждому пользователю для
+выполнения типичных задач.</p>
+<h2 id="Основные-обязанности-пользователя-операционной-системы"><a class="header" href="#Основные-обязанности-пользователя-операционной-системы">Основные обязанности пользователя операционной системы</a></h2>
+<p>В приведённых ниже разделах приведены основные задачи, которые должны выполнять
+пользователи операционных систем. Какие-то задачи достаточно специфичны для
+какой-либо IT-специальности, но мы их поместили сюда потому, что они не будут
+лишними и для обычных пользователей, а в некоторых случаях даже будут
+желательными.</p>
+<h3 id="Управление-резервными-копиями"><a class="header" href="#Управление-резервными-копиями">Управление резервными копиями</a></h3>
+<p>Резервное копирование данных является достаточно важной задачей для любого
+пользователя. У каждого из нас есть жёсткий диск или SSD, на котором мы храним
+как операционную систему, так и свои документы и файлы (слава б-гам, что эра
+дискет, кассет и картриджей канула в лету). Кто знает, когда эти накопители
+уйдут в прошлое? Конечно, у нас есть такая вещь, как SMART, но часто ли мы туда
+заглядываем? А кто знает, когда во время работы выключат свет, и ваш компьютер
+выключится, в результате чего часть ваших файлов окажется повреждённой?</p>
+<p>Резервные копии должны выполняться по определённому расписанию (каждый месяц,
+неделю, день, час, секунду, etc.), а их восстановление должно периодически
+проверяться, т.е. необходимо проверять корректность созданных копий.</p>
+<h3 id="Установка-и-обновление-программного-обеспечения"><a class="header" href="#Установка-и-обновление-программного-обеспечения">Установка и обновление программного обеспечения</a></h3>
+<p>Дистрибутив Calmira GNU/Linux-libre содержит систему портов и МСП cport для
+управления программным обеспечением. Эти две вещи в значительной степени
+упрощают и автоматизируют сборку программного обеспечения из исходного кода,
+однако работа пользователя не минимализируется до нуля. Он должен управлять
+зависимостями ПО, проверять и тестировать обновлённое ПО и выполнять прочие
+действия, о которых пойдёт речь в главах далее.</p>
+<h3 id="Исправление-проблем"><a class="header" href="#Исправление-проблем">Исправление проблем</a></h3>
+<p>Сбои в работе программного обеспечения и операционной системы происходят
+достаточно часто, поэтому пользователь должен, по крайней мере, иметь
+представление о том, как исправить наиболее часто встречающиеся ошибки. Очень
+кстати будет и обратная связь с разработчиками ПО: пользователь может отправлять
+им информацию о найденных ошибках или баг-репорты. Достаточно неплохой вещью же
+со стороны разработчиков является сбор телеметрии<sup class="footnote-reference"><a href="#1">1</a></sup> - обезличенных данных о
+работе программы, её конфигурации и конфигурации ОС. На самом деле, такие данные
+очень хорошо помогают понять разработчикам причины ошибки и условия, в которых
+эта ошибка происходит. Но не следует опускаться до уровня той же Microsoft,
+которая собирает даже те данные, которые, кажется, и не должна. В эти данные
+входит история посещений веб-страниц, наиболее используемые приложения и файлы,
+личные данные, такие, как e-mail адреса, номера телефонов и прочее. Например,
+правительство Германии не так давно вообще запретило использовать продукцию
+Microsoft Office в учебных организациях из-за того, что их вредоносный офисный
+пакет собирал кучу самых разных данных даже из содержимого самих офисных
+документов!</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>конечно, мы не выступаем за сбор абсолютно всех сведений, как это делают Microsoft, Apple, Google и прочие подобные корпорации. Тогда это называлось бы слежкой и шпионажем. Во-первых, сбор указанных мною данных должен быть обезличенным и добровольным. Во-вторых, пользователь, если он всё-таки хочет отправлять диагностические данные разработчикам, должен выбирать те сведения, которые следует передавать. Например, мне очень нравится реализация этого в рабочем окружении KDE Plasma: там есть несколько уровней от низшего к высшему, в зависимости от уровня меняется и количество отправляемых диагностических данных. По умолчанию сбор и передача телеметрии там отключена вообще.</p>
+</div>
+<h3 id="Оптимизация-операционной-системы-для-выполнения-каких-то-определённых-задач"><a class="header" href="#Оптимизация-операционной-системы-для-выполнения-каких-то-определённых-задач">Оптимизация операционной системы для выполнения каких-то определённых задач</a></h3>
+<p>GNU/Linux, как и многие другие операционные системы, являются ОС общего
+назначения, а значит, они предназначены по умолчанию для выполнения самых разных
+задач. Пользователи могут адаптировать ОС для выполнения каких-то конкретных
+вещей, тогда ОС либо научится их выполнять уже, либо просто будет выполнять их
+куда лучше.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Введение"><a class="header" href="#Введение">Введение</a></h1>
+<p><img src="./pic/chapter_1_screen.png" alt="" /></p>
+<h2 id="Краткий-обзор"><a class="header" href="#Краткий-обзор">Краткий обзор</a></h2>
+<p>Прежде всего, добро пожаловать в Calmira GNU/Linux-libre! Этот дистрибутив
+всегда даёт свободу выбора. При его установке вы не раз убедитесь в этом:
+пользователи самостоятельно могут выбирать программное обеспечение, которое
+будет устанавливаться на компьютер, способ установки и прочие подобные вещи.</p>
+<p>Этот дистрибутив основан на свободном программном обеспечении и не скрывает от
+пользователя, как он устроен. cport, система управления ПО дистрибутива,
+написана на языке Python, что позволяет вам с лёгкостью просматривать и изменять
+его исходный код. Система сборки CABS написана на Rust и распространяется под
+лицензией GNU GPLv3. cport и CABS используют исходный код, а настройка
+дистрибутива производится с помощью текстовых конфигурационных файлов.</p>
+<h3 id="Области-применения-calmira-gnulinux-libre"><a class="header" href="#Области-применения-calmira-gnulinux-libre">Области применения Calmira GNU/Linux-libre</a></h3>
+<p>Этот дистрибутив изначально несёт экспериментальную цель - тестирование новейших
+компонентов либо переход на использование чего-то экзотического. Кроме того,
+основной областью применения этой системы является <em>изучение</em> особенностей
+GNU/Linux, его строения и принципа работы. Свободная природа дистрибутива
+позволяет удалённым группам сотрудничать, обмениваться идеями и совместными
+разработками, не беспокоясь о наличии специальных лицензий или ограничений.
+Например, Calmira GNU/Linux-libre разрабатывает небольшая команда из 4 человек,
+живущих в России, Украине и Норвегии.</p>
+<p>Однако никто вам не запрещает использовать эту систему и для других целей. К
+примеру, в качестве системы для слабого оборудования. Так как дистрибутив не
+требовательный к ресурсам ПК, его можно запустить на достаточно слабом железе.
+Главное, чтобы процессор был архитектуры x86_64 - поддержки 32-битных ЦП в
+Calmira GNU/Linux-libre никогда не было.</p>
+<h2 id="Варианты-установки"><a class="header" href="#Варианты-установки">Варианты установки</a></h2>
+<p>Дистрибутив можно установить разными способами. Вы можете загрузить установочный
+iso-образ системы. Тогда установщик оттуда скопирует вам уже собранную систему
+на компьютер. Либо вы можете пойти более сложным путём - самостоятельно
+скомпилировать Calmira GNU/Linux-libre из исходного кода посредством системы
+сборки CABS.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Установка-дистрибутива-версии--2Х"><a class="header" href="#Установка-дистрибутива-версии--2Х">Установка дистрибутива версии &gt;= 2.Х</a></h1>
+<p>Дистрибутив версии 2.0 и выше поставляется с простой в использовании
+псевдографической программой установки. В релизах, предшествующих 2.0, такой
+программы нет, и вся установка производилась вручную. Кроме того, в этих
+релизах не формировались загрузочные iso-образы, а генерировались
+squashfs-снимки. Как вы уже поняли, процесс установки старых версий Calmira
+GNU/Linux-libre достаточно сложен, поэтому мы специально закончили их
+техподдержку после выхода версии 2.0, процесс установки которой сильно упрощён.</p>
+<p>Прочтя эту страницу документации, вы узнаете:</p>
+<ul>
+<li>Как дистрибутив видит и делит на разделы жёсткие диски.</li>
+<li>Как запустить <code>calminstall</code>.</li>
+<li>Как работать с <code>calminstall</code>.</li>
+</ul>
+<h2 id="Системные-требования"><a class="header" href="#Системные-требования">Системные требования</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Пункт</th><th>Минимальные требования</th><th>Рекомендуемые требования</th></tr></thead><tbody>
+<tr><td>ЦП</td><td>x86_64 &gt; 900 МГц</td><td>x86_64 1 ГГц</td></tr>
+<tr><td>ОЗУ</td><td>64 Мб</td><td>128 Мб</td></tr>
+<tr><td>Жёсткий диск</td><td>HDD 1.5 Гб</td><td>SSD 5 Гб</td></tr>
+<tr><td>Сеть</td><td>--</td><td>Наличие сетевого адаптера<sup class="footnote-reference"><a href="#1">1</a></sup></td></tr>
+</tbody></table>
+</div>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>в дистрибутиве используется ядро Linux-libre, которое было очищено от несвободных драйверов, прошивок и блобов. Это значит, что некоторое оборудование (как правило, это сетевые, звуковые и видеокарты) в ОС не поддерживаются, т.е. либо не будут определяться в системе вообще, либо просто не будут корректно работать. В том случае, если что-то из вашего оборудования не поддерживается, попробуйте переключиться на обычное ядро Linux с проприетарными несвободными компонентами [оно входит в минимальную поставку дистрибутива; переключиться можно, выбрав в меню загрузчика ОС соответствующий пункт]. Если не помогло и это, то отправьте нам issue об этом на нашем <a href="https://gitlab.com/calmiralinux/calmiralinux">GitLab</a>. Опишите поведение дистрибутива, версии программного обеспечения (ядро Linux-libre и Linux),тип оборудования, с которым возникли проблемы, его модель и прочие подобные сведения.</p>
+</div>
+<h2 id="Разделы-диска-для-дистрибутива"><a class="header" href="#Разделы-диска-для-дистрибутива">Разделы диска для дистрибутива</a></h2>
+<p>Диск ПК делится на отдельные части, которые называются <em>разделами</em>. Каждая
+операционная система определяет разделы своим способом. К примеру, MS-DOS и её
+потомки, такие, как Windows, присваивает каждому главному и логическому разделу
+<em>букву диска</em>, например, <strong>A:</strong>, <strong>B:</strong>, <strong>C:</strong>, <strong>D:</strong> и т.д. А, например,
+операционные системы семейства GNU/Linux, именуют диски и разделы так:
+<code>/dev/XdYN</code>, где <code>X</code> и <code>Y</code> - определённая буква диска, а <code>N</code> - номер раздела на
+этом диске. <code>X</code> определяет тип диска (<code>h</code> - диск IDE, <code>s</code> - диск SATA), <code>y</code> -
+сам диск (<code>a</code> - главный диск, <code>b</code>, <code>c</code>, <code>d</code>... - съёмные диски).</p>
+<p>К примеру, <strong>sda3</strong> - это третий раздел (<code>3</code>) главного жёсткого диска (<code>a</code>) типа
+SATA (<code>s</code>). Таблица ниже поможет определить тип диска</p>
+<div class="table-wrapper"><table><thead><tr><th>Тип устройства</th><th>Дескриптор устройства</th><th>Примечания</th></tr></thead><tbody>
+<tr><td>SATA, SCSI, USB Flash</td><td><code>sda</code>, <code>sdb</code>, <code>sdc</code>...</td><td>Стал доступен где-то в 2007 году и встречается до сих пор. Наверно, на данный момент самый используемый в GNU/Linux тип.</td></tr>
+<tr><td>NVMe</td><td><code>nvme0n1</code></td><td>Передовая технология накопителей. Устройства NVMe подключаются к шине PCI Express и обладают наиболее высокой скоростью передачи данных. Первый раздел на первом NVMe накопителе обозначается как <code>nvme0n1p1</code>. Поддержка таких устройств в ядре Calmira GNU/Linux-libre есть, но не протестирована. Если у вас есть возможность протестировать систему на таком накопителе, оставьте issue на <a href="https://gitlab.com/calmiralinux/calmiralinux">GitLab CalmiraLinux</a>.</td></tr>
+<tr><td>MMC, eMMC, SD</td><td><code>mmcblk0</code></td><td>SD-карты, MMC и embedded MMC устройства. Используются для хранения данных. <strong>ВНИМАНИЕ:</strong> не все устройства могут иметь возможность загрузки с этих накопителей. <strong>ВНИМАНИЕ:</strong> цикл чтения/записи у таких устройств ограничен куда более, чем у накопителей выше. Поэтому настоятельно не рекомендуется использовать их для установки туда какой-либо операционной системы. Лучше используйте их для переноса файлов, хранения мультимедиа-контента или для кратковременного резервного копирования данных.</td></tr>
+</tbody></table>
+</div>
+<blockquote>
+<h3 id="Принцип-всё-есть-файл"><a class="header" href="#Принцип-всё-есть-файл">Принцип &quot;всё есть файл&quot;</a></h3>
+<p>Операционная система UNIX воспринимает многие вещи как файлы. Даже устройства.
+Файлы устройств содержатся в директории <code>/dev</code>. Поэтому если в данном
+руководстве указывается что-то вроде <em>раздел <code>sdc4</code></em> (или что-то вроде этого),
+то знайте, что здесь подразумевается <em>раздел <code>/dev/sdc4</code></em>.</p>
+</blockquote>
+<h2 id="Начало-установки"><a class="header" href="#Начало-установки">Начало установки</a></h2>
+<p>Вставьте загрузочный носитель в ПК и загрузитесь с него. Вас будет
+приветствовать меню загрузки:</p>
+<p><img src="pic/chapter_1_bootmenu.png" alt="" /></p>
+<p>Вам нужно выбрать пункт &quot;Build Calmira GNU/Linux-libre&quot;. Для этого выберите
+данный пункт стрелками клавиш и нажмите <kbd>Enter</kbd>. Во время загрузки на
+экран будут выведены сообщения о процессе старта системы. Как правило,
+пользователю они нужны будут только в том случае, если во время загрузки системы
+произошла какая-либо ошибка. К примеру, система не загрузится, если вы
+загружаете её iso-образ с помощью программы Ventoy.</p>
+<p>После окончания загрузки система запросит ваш логин и пароль:</p>
+<p><img src="pic/chapter_1_login.png" alt="" /></p>
+<p>Введите следующие данные:</p>
+<ul>
+<li><strong>Логин:</strong> <code>root</code></li>
+<li><strong>Пароль:</strong> <code>root</code></li>
+</ul>
+<p>После логина вас будет приветствовать диалоговое окно:</p>
+<p><img src="pic/chapter_1_login_dialog.png" alt="" /></p>
+<p>Вам будет предложено 3 пункта:</p>
+<ol>
+<li><strong>Install</strong> - запускает установщик системы;</li>
+<li><strong>Live CD Shell</strong> - это диалоговое окно закрывается и вы переходите в
+оболочку BASH загруженной ОС;</li>
+<li><strong>Power off</strong> - выключение/перезагрузка компьютера.</li>
+</ol>
+<p>Для запуска установщика выберите пункт 1.</p>
+<blockquote>
+<p>В том случае, если вы выбрали второй пункт, вы окажетесь в оболочке системы.
+Если вы захотите позже запустить установщик, введите команду <code>calminstall</code>.</p>
+</blockquote>
+<h2 id="Сбор-начальных-сведений"><a class="header" href="#Сбор-начальных-сведений">Сбор начальных сведений</a></h2>
+<h3 id="Выбор-раскладки-клавиатуры"><a class="header" href="#Выбор-раскладки-клавиатуры">Выбор раскладки клавиатуры</a></h3>
+<p>Для начала установщик запросит у вас раскладку клавиатуры, которая будет
+использоваться в дистрибутиве после установки. Заметьте, что по умолчанию у вас
+будет всегда английская раскладка, а та, которую вы выбираете, будет второй.</p>
+<p>Используя клавиши навигации найдите нужную вам раскладку и нажмите
+<kbd>Enter</kbd> для её выбора.</p>
+<h3 id="Установка-имени-хоста"><a class="header" href="#Установка-имени-хоста">Установка имени хоста</a></h3>
+<p>Далее установщик запросит имя хоста для устанавливаемой системы.</p>
+<h3 id="Выбор-устанавливаемых-компонентов"><a class="header" href="#Выбор-устанавливаемых-компонентов">Выбор устанавливаемых компонентов</a></h3>
+<p>Выберите дополнительные компоненты, которые вы хотите установить в систему.
+Заметьте, что менеджер системы портов <code>cport</code>, как и сама система портов, не
+входят в состав базовой системы и являются опциональными. Если вы не выберите
+пункт <code>ports.txz</code>, то вы не сможете управлять программным обеспечением в Calmira
+централизованным и простым путём. Однако, вы можете самостоятельно находить
+архивы с программным обеспечением (как исходный код, так и уже собранное ПО).
+Однако это достаточно сложный и небезопасный способ. Система портов - это
+простой и удобный способ управления программами. Она не содержит исходного кода
+ПО. Система портов состоит из множества файлов с информацией о ПО, а также
+со сборочными инструкциями для автоматизации загрузки, компиляции и установки
+программ.</p>
+<p>Если вы устанавливаете редакцию Extended (расширенную), то обязательно выберите
+пункт <code>extended.txz</code>, иначе ничего из расширенной редакции установлено не будет.</p>
+<p>В зависимости от содержимого установочного iso-образа, а также от редакции
+дистрибутива, содержимое меню будет различаться. Все пункты приведены в списке
+ниже:</p>
+<ul>
+<li><code>development.txz</code> - программное обеспечение для разработчиков;</li>
+<li><code>doc.txz</code> - документация Calmira GNU/Linux-libre;</li>
+<li><code>ports.txz</code> - система портов и <code>cport</code>;</li>
+<li><code>src.txz</code> - исходный код системы;</li>
+<li><code>linux.txz</code> - обычное ядро Linux (по умолчанию устанавливается Linux-libre);</li>
+<li><code>extended.txz</code> - расширенная редакция дистрибутива. Включает в себя сервер
+Xorg и рабочее окружение Anomura;</li>
+</ul>
+<blockquote>
+<p><strong>Внимание!</strong></p>
+<p>Учтите, что программа установки не проверяет наличие свободного места на
+диске. Поэтому, когда вы выбираете тот или иной пункт, будьте уверены, что вам
+хватит для него места. К примеру, исходный код системы может занимать от 1 до
+3 Гб дискового пространства, а пересборка всей системы может затребовать от 5
+до 20 Гб.</p>
+</blockquote>
+<p><img src="pic/chapter_1_select_components.png" alt="" /></p>
+<h3 id="Работа-с-дисками"><a class="header" href="#Работа-с-дисками">Работа с дисками</a></h3>
+<p>Есть два способа осуществить разбиение дискового пространства для установки
+дистрибутива. <em>Автоматическое</em> разбиение самостоятельно настроит разделы диска,
+<em>ручное</em> разбиение даст возможность пользователю разметить жёсткий диск согласно
+своим требованиям. Требуется учесть, что автоматическое разбиение <strong>уничтожит
+все существующие разделы, создав на их месте необходимые для дистрибутива</strong>.
+Если на жёстком диске уже установлена какая-то операционная система, то она
+будет уничтожена.</p>
+<p>В случае использования ручного разбиения запускается программа <code>/sbin/cfdisk</code>,
+которая позволяет пользователю самостоятельно создавать, удалять и изменять
+разделы на жёстком диске. В таком случае после разметки диска установщик
+запросит у вас некоторые данные вроде корневого раздела (<code>/</code>), раздела <code>/home</code>,
+раздела подкачки и пр.</p>
+<p>После выбора ручной разметки вы увидите следующее окно:</p>
+<p><img src="pic/chapter_1_cfdisk.png" alt="" /></p>
+<blockquote>
+<p><strong>Внимание!</strong></p>
+<p>На данный момент функция автоматического разбиения диска нестабильна, поэтому
+по умолчанию отключена. Дождитесь следующих версий Calmira GNU/Linux-libre для
+использования этой опции.</p>
+</blockquote>
+<h2 id="Завершение-сбора-сведений-и-разметки-дисков"><a class="header" href="#Завершение-сбора-сведений-и-разметки-дисков">Завершение сбора сведений и разметки дисков</a></h2>
+<p>Следующий шаг - ваш последний шанс прервать установку. Далее последует
+монтирование созданных разделов, создание необходимых файлов и каталогов и,
+наконец, распаковка архивов с системой. Как только все выбранные архивы
+распакуются, <code>calminstall</code> начнёт исполнять скрипты для настройки установленной
+системы.</p>
+<h3 id="Установка-пароля-root"><a class="header" href="#Установка-пароля-root">Установка пароля <code>root</code></a></h3>
+<p>Установка <code>root</code>-пароля обязательна. Заметьте, что во время ввода пароля для
+всех пользователей набираемые символы не отображаются на экране. После ввода
+пароля он будет запрошен ещё раз для предотвращения опечаток при наборе.</p>
+<h3 id="Создание-пользователя"><a class="header" href="#Создание-пользователя">Создание пользователя</a></h3>
+<p>Далее установщик запросит у вас имя обычного пользователя. После ввода имени
+создайте пароль нового пользователя. Всё также, как и в предыдущем пункте:
+символы пароля не отображаются на экране, ввод пароля повторится ещё один раз
+для исключения возможности опечататься при вводе.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Часть-2"><a class="header" href="#Часть-2">Часть 2</a></h1>
+<p>Данная часть содержит сведения о настройке дистрибутива Calmira GNU/Linux-libre
+после установки. Информация здесь предназначена для быстрого входа в систему. В
+части 3 приведены более конкретные и объёмные сведения о строении и принципе
+работы GNU/Linux.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Авторизация-в-системе"><a class="header" href="#Авторизация-в-системе">Авторизация в системе</a></h1>
+<p>После того, как только что установленная Calmira GNU/Linux-libre запустилась,
+вас будет приветствовать примерно такое системное приглашение:</p>
+<pre><code>Welcome to Calmira GNU/Linux-libre 6.0.0-gnu!
+
+Date:   Mon Dec 26   2022 23:23:40
+Kernel: 6.0.0-gnu
+Host:   test-pc
+
+test-pc login:
+</code></pre>
+<p>Если во время установки вы указали имя хоста, то вместо <code>test-pc</code> у вас будет
+отображаться это имя. <code>6.0.0-gnu</code> - это версия ядра Linux, которое используется
+конкретно в вашей версии Calmira GNU/Linux-libre. В зависимости от версии
+системы будет изменяться и версия ядра.</p>
+<p>Строка <code>test-pc login:</code> указывает вам, что необходимо ввести имя пользователя.
+На данный момент мы не создавали никаких пользователей, но у нас есть
+пользователь <code>root</code> - что-то вроде пользователя &quot;Администратор&quot; в MS-Windows.</p>
+<p>Введите имя пользователя: <code>root</code>.</p>
+<pre><code>test-pc login: root
+</code></pre>
+<p>После чего система запросит у вас его пароль. Пароль по-умолчанию: <code>root</code>. При
+вводе пароля на экране не будут показываться его символы - это сделано ради
+безопасности!</p>
+<pre><code>test-pc login: root
+Password:
+</code></pre>
+<p>В том случае, если вы правильно ввели логин и пароль, у вас загрузится оболочка
+<code>/bin/bash</code>:</p>
+<pre><code>Welcome to Calmira GNU/Linux-libre 6.0.0-gnu!
+
+Date:   Mon Dec 26   2022 23:23:40
+Kernel: 6.0.0-gnu
+Host:   test-pc
+
+test-pc login:
+Password:
+Last login: Sun Sep 25 20:54:53 +0300 2022 on /dev/tty1
+No mail.
+root:~#
+</code></pre>
+<p>Строка <code>Last login ...</code> показывает информацию о том, когда был предыдущий вход в
+систему:</p>
+<ul>
+<li>Дата входа</li>
+<li>В каком TTY был произведён вход<sup class="footnote-reference"><a href="#1">1</a></sup></li>
+</ul>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>разговор о TTY будет в главах далее. А пока просто считайте, что это консоль.</p>
+</div>
+<p><code>root:~# </code> - это приглашение к вводу команды. Наличие этой строки означает то,
+что система загрузилась и готова к выполнению ваших команд.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Первичная-настройка-дистрибутива"><a class="header" href="#Первичная-настройка-дистрибутива">Первичная настройка дистрибутива</a></h1>
+<p>После того, как система полностью загрузилась, вам необходимо выполнить
+некоторые действия по её первичной настройки.</p>
+<h2 id="Создание-пользователей"><a class="header" href="#Создание-пользователей">Создание пользователей</a></h2>
+<p>Первым делом вам нужно создать обычного пользователя, из-под которого вы будете
+работать по умолчанию. Для создания пользователей используется программа
+<code>useradd</code>. Введите команду:</p>
+<pre><code># useradd -m USERNAME -s /bin/bash
+</code></pre>
+<p>В том случае, если программа <code>useradd</code> завершилась без ошибок (а значит, нужный
+пользователь создан), в терминал не будет ничего выведено. Если <code>useradd</code> вывела
+в терминал какое-либо сообщение, то проанализируйте его и выполните те действия,
+которые там, возможно, указаны.</p>
+<p>После чего вам нужно дать ему пароль:</p>
+<pre><code># passwd USERNAME
+</code></pre>
+<p>Программа выведет в терминал:</p>
+<pre><code>Изменение пароля для USERNAME
+Введите новый пароль (минимальная длина 5 символов)
+Используйте комбинацию из символов в верхнем и нижнем регистре и цифры
+Новый пароль:
+Повторите новый пароль:
+passwd: пароль изменён.
+</code></pre>
+<p>В том случае, если по умолчанию у вас не русский язык, а английский, то вывод
+будет таким:</p>
+<pre><code>Changing password for USERNAME
+Enter the new password (minimum of 5 characters)
+Please use a combination of upper and lower case letters and numbers.
+New password:
+Re-enter new password:
+passwd: password changed.
+</code></pre>
+<small>
+<tt><code>USERNAME</code></tt> замените на имя пользователя. Например,
+<tt><code>michail</code></tt>. Имя пользователя должно быть на английском и
+содержать только буквы и, возможно, цифры. Все остальные символы использовать не
+рекомендуется во избежание ошибок в работе системы и стороннего программного
+обеспечения.</small>
+<h3 id="Объяснение-команд"><a class="header" href="#Объяснение-команд">Объяснение команд</a></h3>
+<ul>
+<li><code>useradd</code> - программа для создания новых пользователей.</li>
+<li><code>-m</code> в команде <code>useradd ...</code> - указывает программе <code>useradd</code> создавать
+домашнюю директорию пользователя в <code>/home/</code>.</li>
+<li><code>-s /bin/bash</code> - закрепляет за создаваемым пользователем оболочку <code>/bin/bash</code>.
+Она будет использоваться для него по умолчанию. Других командных оболочек в
+Calmira GNU/Linux по умолчанию нет.</li>
+<li><code>USERNAME</code> - вместо этих символов подставьте имя пользователя.</li>
+<li><code>passwd</code> - устанавливает новый/изменяет пароль пользователя.</li>
+</ul>
+<p>Для того, чтобы войти в систему от имени созданного пользователя, можно
+использовать два способа:</p>
+<p><strong>Способ 1:</strong></p>
+<pre><code># su USERNAME
+</code></pre>
+<p><strong>Способ 2:</strong></p>
+<pre><code># exit
+</code></pre>
+<p>После выполнения данной команды вас будет приветствовать приглашение к входу в
+систему как на предыдущей странице. Введите имя созданного пользователя и его
+пароль.</p>
+<hr />
+<blockquote>
+<h2 id="Почему-не-рекомендуется-работать-от-имени-пользователя-root"><a class="header" href="#Почему-не-рекомендуется-работать-от-имени-пользователя-root">Почему не рекомендуется работать от имени пользователя root?</a></h2>
+<p><code>root</code> - это системный привилегированный пользователь. Если вы работаете от
+его имени, то у вас есть широкие возможности для модификации и изменении
+операционной системы GNU/Linux-libre. Вы можете случайно удалить какой-либо
+системный файл, в результате чего работа системы будет либо некорректной, либо
+вообще невозможной. Кроме того, ваша система становится уязвимой для не самых
+хороших личностей, которые могут либо поломать её, либо украсть какие-либо
+данные, либо даже отправить в систему вирус или троян.</p>
+<p>Вопреки известному мнению о том, что &quot;в GNU/Linux(-libre) нет вирусов&quot; - это
+совсем не так. Вирусы, трояны и прочая гадость эксплуатирует уязвимости в
+программном обеспечении, в том числе и в ОС. А в любом ПО так или иначе есть
+баги, ошибки и уязвимости. Однако можно отметить тот факт, что для
+UNIX-подобных систем существует несколько меньше вирусов, чем для той же
+MS-Windows. Да и на компьютерах обычных пользователей вирусы - это редкое
+явление. Однако не следует пренебрегать своей безопасностью.</p>
+<p>Используйте учётную запись <code>root</code> исключительно в крайних случаях. В том
+случае, если вам нужно выполнить команду/программу с повышенными привилегиями,
+то используйте либо программу <code>su -c &quot;команда&quot;</code>, либо программу <code>sudo</code> (порт
+<code>general/sudo</code>. Информация об этой программе будет в главе 3. Установить её
+легко:</p>
+<pre><code># cport -i general/sudo
+</code></pre>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Настройка-grub"><a class="header" href="#Настройка-grub">Настройка GRUB</a></h1>
+<p>Первичный конфиг GRUB находится в файле <code>/boot/grub/grub.cfg</code>:</p>
+<pre><code># Begin /boot/grub/grub.cfg
+set default=0
+set timeout=3
+
+insmod ext2
+set root=(hd0,2)
+
+menuentry &quot;Calmira v2.0 Core Edition&quot; {
+  linux /boot/vmlinuz-6.0-gnu root=/dev/sda2 ro quiet
+}
+</code></pre>
+<p>Параметр <code>default</code> определяет выбранный по умолчанию пункт меню GRUB.</p>
+<p>Параметр <code>timeout</code> определяет время (в секундах), по прошествии которого, в
+случае бездействия пользователя, будет выбран стандартный пункт меню, указанный
+в параметре <code>default</code>.</p>
+<p><strong>TODO:</strong> больше конкретики</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Редактирование-файлов"><a class="header" href="#Редактирование-файлов">Редактирование файлов</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Управление-программным-обеспечением"><a class="header" href="#Управление-программным-обеспечением">Управление программным обеспечением</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Управление-правами-доступа"><a class="header" href="#Управление-правами-доступа">Управление правами доступа</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Работа-с-системой-инициализации"><a class="header" href="#Работа-с-системой-инициализации">Работа с системой инициализации</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Часть-3"><a class="header" href="#Часть-3">Часть 3</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Ядро-системы"><a class="header" href="#Ядро-системы">Ядро системы</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Оболочка-системы"><a class="header" href="#Оболочка-системы">Оболочка системы</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Основные-программы"><a class="header" href="#Основные-программы">Основные программы</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bash"><a class="header" href="#bash">BASH</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Перемещение-по-директориям"><a class="header" href="#Перемещение-по-директориям">Перемещение по директориям</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Работа-с-файлами"><a class="header" href="#Работа-с-файлами">Работа с файлами</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Переменные-окружения"><a class="header" href="#Переменные-окружения">Переменные окружения</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Пути-до-исполняемых-файлов"><a class="header" href="#Пути-до-исполняемых-файлов">Пути до исполняемых файлов</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Получение-интерактивной-справки"><a class="header" href="#Получение-интерактивной-справки">Получение интерактивной справки</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Ввод-и-вывод"><a class="header" href="#Ввод-и-вывод">Ввод и вывод</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Основные-ошибки"><a class="header" href="#Основные-ошибки">Основные ошибки</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Управление-процессами"><a class="header" href="#Управление-процессами">Управление процессами</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Компоненты-процесса"><a class="header" href="#Компоненты-процесса">Компоненты процесса</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pid-и-ppid"><a class="header" href="#pid-и-ppid">PID и PPID</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uid-и-euid"><a class="header" href="#uid-и-euid">UID и EUID</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gid-и-egid"><a class="header" href="#gid-и-egid">GID и EGID</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Жизненный-цикл-процесса"><a class="header" href="#Жизненный-цикл-процесса">Жизненный цикл процесса</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Сигналы"><a class="header" href="#Сигналы">Сигналы</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Использование-kill"><a class="header" href="#Использование-kill">Использование kill</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Использование-ps"><a class="header" href="#Использование-ps">Использование ps</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Использование-top"><a class="header" href="#Использование-top">Использование top</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Изменение-приоритета-выполнения"><a class="header" href="#Изменение-приоритета-выполнения">Изменение приоритета выполнения</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Файловая-система-proc"><a class="header" href="#Файловая-система-proc">Файловая система /proc</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Управление-пользователями"><a class="header" href="#Управление-пользователями">Управление пользователями</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Учётная-запись-root"><a class="header" href="#Учётная-запись-root">Учётная запись root</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Замена-идентификатора-пользователя-su"><a class="header" href="#Замена-идентификатора-пользователя-su">Замена идентификатора пользователя: su</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Использование-sudo"><a class="header" href="#Использование-sudo">Использование sudo</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Прочие-системные-учётные-записи"><a class="header" href="#Прочие-системные-учётные-записи">Прочие системные учётные записи</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Группы-пользователей"><a class="header" href="#Группы-пользователей">Группы пользователей</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Создание-пользователей-1"><a class="header" href="#Создание-пользователей-1">Создание пользователей</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Управление-правами-доступа-1"><a class="header" href="#Управление-правами-доступа-1">Управление правами доступа</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Стандартное-управление-доступом"><a class="header" href="#Стандартное-управление-доступом">Стандартное управление доступом</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Расширенное-управление-доступом"><a class="header" href="#Расширенное-управление-доступом">Расширенное управление доступом</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Установка-флагов-setuid-и-setgid"><a class="header" href="#Установка-флагов-setuid-и-setgid">Установка флагов setuid и setgid</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="acl"><a class="header" href="#acl">ACL</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
