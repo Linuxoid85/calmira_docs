@@ -57,3 +57,12 @@
     - [Расширенное управление доступом](./chapter_3_perm_additional.md)
       - [Установка флагов `setuid` и `setgid`](./chapter_3_perm_setuid.md)
       - [ACL](./chapter_3_perm_acl.md)
+  - [Управление программным обеспечением](./chapter_3_software.md)
+
+# Часть 4
+
+- [Часть 4](./chapter_4.md)
+  - [Продвинутое использование Neovim](./chapter_4_nvim.md)
+  - [Продвинутое использование sudo](./chapter_4_sudo.md)
+  - [Продвинутое использование системы портов](./chapter_4_ports.md)
+  - [Изменение параметров загрузки системы](./chapter_4_boot.md)
