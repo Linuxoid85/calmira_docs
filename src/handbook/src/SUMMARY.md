@@ -16,16 +16,17 @@
   - [Настройка GRUB](./chapter_2_grub.md)
   - [Редактирование файлов](./chapter_2_editors.md)
   - [Управление программным обеспечением](./chapter_2_software.md)
-  - [Управление правами доступа](./chapter_2_permissions.md)
   - [Работа с системой инициализации](./chapter_2_init.md)
 
 # Часть 3
 
 - [Часть 3](./chapter_3.md)
+  - [Процесс загрузки системы](./chapter_3_boot.md)
   - [Ядро системы](./chapter_3_kernel.md)
   - [Оболочка системы](./chapter_3_env_intro.md)
     - [Основные программы](./chapter_3_env_soft.md)
     - [BASH](./chapter_3_env_bash.md)
+    - [Множественные консоли](./chapter_3_virt_consoles.md)
     - [Перемещение по директориям](./chapter_3_env_dirs.md)
     - [Работа с файлами](./chapter_3_env_files.md)
     - [Переменные окружения](./chapter_3_env_vars.md)
